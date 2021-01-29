@@ -1,0 +1,116 @@
+const quiz = [
+  {
+    question: "ドラえもんに登場するスネ夫の苗字は？",
+    answers: ["たじま", "T島", "骨川", "山川"],
+    correct: "骨川",
+  },
+  {
+    question: "ドラえもんの好物はどらやき、では妹のドラミちゃんの好物は？",
+    answers: ["カステラ", "タジパン", "タジあん", "メロンパン"],
+    correct: "メロンパン",
+  },
+  {
+    question: "ドラえもんに登場するジャイアンの苗字は？",
+    answers: ["それは", "言えない", "いしばし", "だなんて"],
+    correct: "いしばし",
+  },
+  {
+    question: "香港旅行に行った時、僕がいしばし君に蹴られた場所といえば？",
+    answers: ["寺院", "街中", "タクシー", "玄関"],
+    correct: "玄関",
+  },
+  {
+    question: "では彼に東京で捕まえられて、何にぶつけられた？",
+    answers: ["ビル", "電車", "車", "訴えてやる"],
+    correct: "電車",
+  },
+  {
+    question:
+      "トロッコ問題。一人を犠牲にすれば、線路上の5人は助かります。どうする？",
+    answers: ["何もしない", "5人を助ける", "大声を出す", "サイコパス"],
+    correct: "サイコパス",
+  },
+  {
+    question: "ロシア発、空飛ぶタクシーは何を元に作られてる？",
+    answers: ["白いボート", "青いボート", "ドローン", "赤いボート"],
+    correct: "ドローン",
+  },
+  {
+    question: "アメリカ大統領がバイデン氏になって大きく変わったのは？",
+    answers: [
+      "差別問題",
+      "難民問題",
+      "外交問題",
+      "次はなかしまとアメリカで仲良くできる",
+    ],
+    correct: "次はなかしまとアメリカで仲良くできる",
+  },
+  {
+    question:
+      "飛行機の中で食べるように作られた野菜があります。その野菜はどれでしょう？",
+    answers: [
+      "パプリカ",
+      "ミニトマト",
+      "ズッキーニ",
+      "なぜか飛行機の中で英語を使うと怒られる",
+    ],
+    correct: "ミニトマト",
+  },
+  {
+    question: "友情クイズ、時間の無駄だった？",
+    answers: ["はい", "いいえ", "むだ", "もっと"],
+    correct: "もっと",
+  },
+];
+
+const quizLength = quiz.length;
+let quizIndex = 0;
+let score = 0;
+
+const $button = document.getElementsByTagName("button");
+const buttonLength = $button.length;
+//クイズの問題文、選択肢を定義
+const setupQuiz = () => {
+  document.getElementById("js-question").textContent = quiz[quizIndex].question;
+  let buttonIndex = 0;
+  while (buttonIndex < buttonLength) {
+    $button[buttonIndex].textContent = quiz[quizIndex].answers[buttonIndex];
+    buttonIndex++;
+  }
+};
+setupQuiz();
+
+const clickHandler = (e) => {
+  if (quiz[quizIndex].correct === e.target.textContent) {
+    window.alert("正解！");
+    score++;
+  } else {
+    window.alert("残念..不正解！");
+  }
+
+  quizIndex++;
+
+  if (quizIndex < quizLength) {
+    //問題数がまだあれはこちらを実行
+    setupQuiz();
+  } else {
+    //問題がもうなければこちらを実行
+    window.alert(
+      "おつかれさま！君の友情度は" +
+        score * 10 +
+        "％" +
+        // "/" +
+        // quizLength +
+        "です！" +
+        "100％目指してがんばってね！" +
+        "(やり直しは更新ボタン)"
+    );
+  }
+};
+let handlerIndex = 0;
+while (handlerIndex < buttonLength) {
+  $button[handlerIndex].addEventListener("click", function (e) {
+    clickHandler(e);
+  });
+  handlerIndex++;
+}
