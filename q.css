@@ -2,7 +2,7 @@ body {
   margin: 0;
   text-align: center;
   background-image: url(lightgreen.jpeg);
-  -webkit-text-size-adjust: 100%;
+  /* -webkit-text-size-adjust: 100%; */
 }
 #js-question {
   margin: 50px auto;
@@ -26,7 +26,7 @@ button {
 .container {
   display: inline-block;
 }
-@media screen and(min-width: 600px) {
+@media screen {
   body {
     max-width: 100%;
   }
