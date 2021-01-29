@@ -26,6 +26,9 @@ button {
   display: inline-block;
 }
 @media screen {
+  body {
+    max-width: 100%;
+  }
   #js-question {
     font-size: 2rem;
   }
