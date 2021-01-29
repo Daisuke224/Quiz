@@ -25,10 +25,7 @@ button {
 .container {
   display: inline-block;
 }
-@media screen and (min-width: 600px) {
-  body {
-    max-width: 100%;
-  }
+@media screen {
   #js-question {
     font-size: 2rem;
   }
