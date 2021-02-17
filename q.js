@@ -90,10 +90,10 @@ const clickHandler = (e) => {
     window.alert("タジパンうんまーー！!");
   }
   if (e.target.textContent === "サイコパス") {
-    window.alert("こわいっす汗");
+    window.alert("こっっっわ汗");
   }
   if (e.target.textContent === "青いボート") {
-    window.alert("懐かしい！");
+    window.alert("懐かしいよね！");
   }
   if (e.target.textContent === "なぜか飛行機の中で英語を使うと怒られる") {
     window.alert("これは滅茶苦茶怒られるから気を付けて！");
