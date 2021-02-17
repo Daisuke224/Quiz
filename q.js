@@ -1,7 +1,7 @@
 const quiz = [
   {
     question: "ドラえもんに登場する「のび太」の苗字は？",
-    answers: ["たじま", "みなもと", "のび", "ほねかわ"],
+    answers: ["みなもと", "たじま", "のび", "ほねかわ"],
     correct: "のび",
   },
   {
@@ -28,7 +28,7 @@ const quiz = [
   {
     question:
       "トロッコ問題。一人を犠牲にすれば、線路上の5人は助かります。さてどうする？",
-    answers: ["何もしない", "5人を助ける", "いずれにせよ", "サイコパス"],
+    answers: ["何もしない", "5人を助ける", "サイコパス", "サイコパス"],
     correct: "サイコパス",
   },
   {
@@ -82,6 +82,23 @@ const setupQuiz = () => {
 setupQuiz();
 
 const clickHandler = (e) => {
+  // 回答にコメントを付与
+  if (e.target.textContent === "たじま") {
+    window.alert("たじまのび太ってｗｗ");
+  }
+  if (e.target.textContent === "タジパン") {
+    window.alert("タジパンうんまーー！");
+  }
+  if (e.target.textContent === "サイコパス") {
+    window.alert("こわいっす汗");
+  }
+  if (e.target.textContent === "青いボート") {
+    window.alert("懐かしい！");
+  }
+  if (e.target.textContent === "なぜか飛行機の中で英語を使うと怒られる") {
+    window.alert("これは滅茶苦茶怒られるから気を付けて！");
+  }
+  // 正解、不正解の挙動
   if (quiz[quizIndex].correct === e.target.textContent) {
     window.alert("正解！");
     score++;
