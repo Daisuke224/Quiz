@@ -84,23 +84,13 @@ setupQuiz();
 const clickHandler = (e) => {
   // 回答にコメントを付与
   if (e.target.textContent === "たじま") {
-<<<<<<< HEAD
     window.alert("たじまのび太ってｗｗ");
   }
   if (e.target.textContent === "タジパン") {
-    window.alert("タジパンうんまーー！");
+    window.alert("タジパンうんまーー！!");
   }
   if (e.target.textContent === "サイコパス") {
     window.alert("こわいっす汗");
-=======
-    window.alert("たじまをもう選んじゃった？");
-  }
-  if (e.target.textContent === "タジパン") {
-    window.alert("タジパンってｗｗｗ");
-  }
-  if (e.target.textContent === "サイコパス") {
-    window.alert("こわっ汗");
->>>>>>> 38b6ac7ec2e35195a6dd67fe6b5fb34395e471f8
   }
   if (e.target.textContent === "青いボート") {
     window.alert("懐かしい！");
